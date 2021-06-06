@@ -1,0 +1,30 @@
+.subtotal {
+    padding: 0 10px;
+
+}
+
+.subtotal_price {
+    margin-top: 10px;
+}
+
+.subtotal_price>p {
+    margin-top: 10px;
+
+}
+
+.proceedpayment {
+
+    display: flex;
+    padding-top: 25px;
+    justify-content: center;
+}
+
+.proceedpayment>button {
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    background-color: #ff9900;
+    font-weight: 600;
+
+}

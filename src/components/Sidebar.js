@@ -5,9 +5,14 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import BookmarksIcon from '@material-ui/icons/Bookmarks';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
 import {Avatar} from '@material-ui/core'
+import { Link } from 'react-router-dom';
+import { useStateValue } from './StateProvider';
 
 const Sidebar = () => {
+    const [{basket},dispatch]=useStateValue()
+
     return (
+
         <div className="sidebar">
             
             <div className="sidebar__Logo">
@@ -15,8 +20,9 @@ const Sidebar = () => {
             
             </div>
             <div className="sidebar__iconsContainer">
-            <HomeIcon className="sidebar__homeIcon"/>
-            <ShoppingCartIcon className="sidebar__cartIcon"/>
+         <Link to="/" style={{ textDecoration: 'none' }}><HomeIcon className="sidebar__homeIcon"/></Link> 
+        <Link to="/checkout" style={{ textDecoration: 'none' }}> <p className="cartItem__count">{basket.length
+        }</p> <ShoppingCartIcon className="sidebar__cartIcon"/></Link>
             <BookmarksIcon className="sidebar__bookmarkIcon"/>
             <QueryBuilderIcon className="sidebar__ordersIcon"/>
             </div>
