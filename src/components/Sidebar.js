@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 
 const Sidebar = () => {
-    const [{basket},dispatch]=useStateValue()
+    const [{basket,user},dispatch]=useStateValue()
 
     return (
 
@@ -20,17 +20,20 @@ const Sidebar = () => {
             
             </div>
             <div className="sidebar__iconsContainer">
-         <Link to="/" style={{ textDecoration: 'none' }}><HomeIcon className="sidebar__homeIcon"/></Link> 
-        <Link to="/checkout" style={{ textDecoration: 'none' }}> <p className="cartItem__count">{basket.length
+         <Link to="/" style={{ textDecoration: 'none',color:"black"}}><HomeIcon className="sidebar__homeIcon"/></Link> 
+        <Link to="/checkout" style={{ textDecoration: 'none',color:"black" }}> <p className="cartItem__count">{basket.length
         }</p> <ShoppingCartIcon className="sidebar__cartIcon"/></Link>
             <BookmarksIcon className="sidebar__bookmarkIcon"/>
             <QueryBuilderIcon className="sidebar__ordersIcon"/>
             </div>
             
-            <div className="sidebar__userInfo">
-                <Avatar src="https://lh3.googleusercontent.com/proxy/doh7gzrR3_pLlm1cW4rI_63ywOm5VOEeCtajE7KNV7u2LoZ04Zb5zj6u-z1WNJ58wHnpekLI9czK5AG96mlCK4mmU63vTJvf4bwwp810RJbpO3D6Mo3yqg" />
+         <Link to="/login">   <div className="sidebar__userInfo">
+           
+               <Avatar  src={user?.photoURL} />
+               
+               
             </div>
-            
+            </Link>
         </div>
     )
 }

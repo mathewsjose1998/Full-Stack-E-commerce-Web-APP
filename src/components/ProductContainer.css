@@ -2,10 +2,21 @@
     display: flex;
     flex-wrap: wrap;
     padding: 10px 10px;
+    margin-left: 30px;
+    width: 100%;
 
     justify-content: space-around;
 
 
+
+
+}
+
+@media (max-width: 550px) {
+    .productcontainer {
+        padding-left: -30px;
+        margin-left: 0px;
+    }
 
 
 }

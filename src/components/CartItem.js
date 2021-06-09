@@ -4,23 +4,14 @@ import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 
 import { useStateValue } from './StateProvider';
 
-const CartItem = ({id,image,title,price}) => {
- 
-    const [subtotal,setsubtotal]=useState("0")
-   const [quantity,setquantity]=useState("1")
+const CartItem = ({id,image,title,price,quantity}) => {
+ console.log(`quantity in cart ${quantity}`);
+   // const [subtotal,setsubtotal]=useState(0)  
+  //  const [quantity,setquantity]=useState(1)
+ let cart= sessionStorage.getItem('cart');
+ console.log(`session storate ${cart}`)
    const [{basket},dispatch]=useStateValue();
 
-   useEffect(() => {
-        
-   
-
-if(quantity<1){
-    removeItem();
-}
-console.log(subtotal)
-
-      
-   }, [quantity,id])
 
 const removeItem=()=>{
     dispatch({
@@ -34,11 +25,35 @@ const removeItem=()=>{
     })
 }
   const addQuantity=()=>{
-      setquantity(parseInt(quantity)+1)
+   console.log("add quantity")
+
+ dispatch({
+    type:"ADD_QUANTITY",
+    item:{
+        id:id,
+    }
+})
+
   }
+
   const subQuantity=()=>{
-    setquantity(parseInt(quantity)-1)
-}
+      if(quantity<2){
+            removeItem();
+      }
+      else{
+        dispatch({
+            type:"SUB_QUANTITY",
+            item:{
+                id:id,
+            }
+        })
+      }
+   
+    
+  }
+
+
+
 
   
     return (
@@ -47,7 +62,7 @@ const removeItem=()=>{
                                     
             <div className="checkout__product">
                                     
-            <div className="product_imageContainer">
+            <div className="product_imageContainers">
                  <img src={image} alt="" />
              </div>
             

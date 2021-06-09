@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import React from 'react'
 import './Product.css'
+import { useStateValue } from './StateProvider';
+
 
 const Product = ({image,title,price,category,id}) => {
     
-    
+    const [{user},dispatch]=useStateValue()
+    console.log(`the user is ${JSON.stringify(user)}`)
     return (
 
         

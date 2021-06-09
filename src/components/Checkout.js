@@ -16,11 +16,11 @@ const Checkout = () => {
 
                     {
                         basket&&
-                        (
+                        (   
                             basket.map((item)=>(
                                 
-                                <CartItem image={item.image} title={item.title} price={item.price} id={item.id}/>
-                            
+                                <CartItem image={item.image} title={item.title} price={item.price} id={item.id} quantity={item.quantity} />
+                                   
                             ))
                         )
                     }

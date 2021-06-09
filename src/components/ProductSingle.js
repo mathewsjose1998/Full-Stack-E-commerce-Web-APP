@@ -20,6 +20,7 @@ const addToCart=()=>{
             title:item.title,
             image:item.image,
             price:item.price,
+            quantity:1,
         },
     })
     setadded(true);
