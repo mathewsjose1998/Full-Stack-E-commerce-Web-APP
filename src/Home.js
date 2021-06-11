@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Product from './components/Product';
 import ProductContainer from './components/ProductContainer';
 import FakeStore from './components/FakeStore';
+import Footer from './components/Footer';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
                 <ImageSlider/>
                 <ProductContainer/>
                  {/* <FakeStore/> */}
+                 <Footer/>
                    
             </Container>
            

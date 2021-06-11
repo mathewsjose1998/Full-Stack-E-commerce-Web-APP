@@ -14,6 +14,9 @@ const proceedPayment=()=>{
         if(!user){
                 history.push('/login')
         }
+        else{
+            history.push('/payment')
+        }
 }
     
     return (

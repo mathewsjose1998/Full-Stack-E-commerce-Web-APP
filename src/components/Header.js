@@ -13,8 +13,8 @@ const Header = () => {
                         <div className="header__languageDropdown">
                             <select>
                                 <option value="English">English</option>
-                                <option value="English">English</option>
-                                <option value="English">English</option>
+                                <option value="English">Spanish</option>
+                                <option value="English">Russian</option>
                             </select>
                         </div>
 

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './Product.css'
 import { useStateValue } from './StateProvider';
 
 
-const Product = ({image,title,price,category,id}) => {
+const Product =({image,title,price,category,id}) => {
     
     const [{user},dispatch]=useStateValue()
     console.log(`the user is ${JSON.stringify(user)}`)
@@ -27,7 +27,7 @@ const Product = ({image,title,price,category,id}) => {
                         <strong>{price}</strong>
                     </h2>
                     <div className="product__rating">
-                    ⭐4.3
+                    ⭐{Math.floor(Math.random()*5)+2}
                     </div>
             </div>
             
@@ -35,6 +35,6 @@ const Product = ({image,title,price,category,id}) => {
         </div>
         </Link> 
     )
-}
+};
 
 export default Product

@@ -1,8 +1,9 @@
-import React, {useEffect, useState } from 'react'
+import React, {forwardRef, useEffect, useState } from 'react'
 import Product from './Product'
 import './ProductContainer.css'
+import FlipMove from 'react-flip-move'
 
-const ProductContainer = () => {
+const ProductContainer= ()=> {
     const [products,setproducts]= useState([])
     useEffect(() => {
        
@@ -20,6 +21,9 @@ const ProductContainer = () => {
  
     return (
         <div className="productcontainer">
+          
+
+         
           {
           products.map((product)=>(
               
@@ -40,8 +44,10 @@ const ProductContainer = () => {
           ))
 }
 
-                 
+
+  
         </div>
+
            
        
     )

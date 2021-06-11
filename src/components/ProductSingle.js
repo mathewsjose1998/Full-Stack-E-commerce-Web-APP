@@ -3,6 +3,7 @@ import { useParams } from 'react-router'
 import './ProductSingle.css'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useStateValue } from './StateProvider';
+import Footer from './Footer';
 
 const ProductSingle = () => {
     const [isadded,setadded]=useState(false)
@@ -120,8 +121,9 @@ const addToCart=()=>{
             
             }
             
-          
+          <Footer/>
         </div>
+        
             
         
         

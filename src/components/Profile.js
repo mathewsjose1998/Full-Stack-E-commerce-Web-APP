@@ -3,6 +3,7 @@ import './Profile.css'
 import {auth} from '../firebase'
 import { useStateValue } from './StateProvider'
 import {useHistory} from 'react-router-dom'
+import Footer from './Footer'
 
 
 const Profile = () => {
@@ -39,6 +40,7 @@ const Profile = () => {
           </button>
         </div>
       </div>
+  
     </div>
     )
 }

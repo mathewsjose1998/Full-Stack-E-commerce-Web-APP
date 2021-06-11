@@ -1,0 +1,145 @@
+.payment {
+    margin-top: 15vh;
+    margin-left: 10vw;
+    padding-left: 30px;
+    height: 100vh;
+}
+
+.payment__container {
+    width: 100%;
+    display: flex;
+}
+
+.payment__info {
+    flex: 0.6;
+
+    margin: 15px;
+    padding: 10px;
+    height: 200px;
+}
+
+.payment__order_summary {
+    flex: 0.4;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.order_id {
+    padding-top: 10px;
+}
+
+.order_product_container {
+    padding-top: 10px;
+    border-bottom: solid 0.2px rgb(219, 200, 200);
+    padding-bottom: 5px;
+
+
+}
+
+.order_product {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+
+}
+
+.order_product_title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+}
+
+.order_product_quantity {
+    opacity: 0.5;
+}
+
+.order_product_price {
+
+    padding-left: 13px;
+    font-size: 17px;
+
+
+}
+
+.order_total_container {
+    padding-top: 30px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 18px;
+    justify-content: space-between;
+}
+
+.total_price,
+.tax_total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.grand_total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.paynow_button {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.paynow_button>button {
+    padding: 15px;
+    border: none;
+    border-radius: 7px;
+    width: 80%;
+    color: white;
+    background-color: #ff9900;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.payment__card {
+    margin-top: 30px;
+    background-image: url(https://github.com/santdas36/amazon-ish/blob/main/src/assets/card.jpg?raw=true);
+    height: 200px;
+    width: 95%;
+    border-radius: 20px;
+    background-position: center;
+    padding-right: 10px;
+}
+
+.payment__cardName {
+
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 120px;
+    background: none;
+    font-size: 17px;
+    font-family: Nunito Sans, sans-serif;
+    font-weight: 600;
+
+}
+
+.payment__cardName:focus-visible {
+    outline: none;
+}

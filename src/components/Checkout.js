@@ -1,5 +1,6 @@
 import React from 'react'
 import CartItem from './CartItem'
+import FlipMove from 'react-flip-move'
 import './Checkout.css'
 import { useStateValue } from './StateProvider'
 import SubTotal from './SubTotal'
@@ -13,17 +14,21 @@ const Checkout = () => {
             </div>
             <div className="checkout__container">
                 <div className="checkout__products">
-
+               
                     {
                         basket&&
+                      
                         (   
                             basket.map((item)=>(
                                 
-                                <CartItem image={item.image} title={item.title} price={item.price} id={item.id} quantity={item.quantity} />
+                                <CartItem key={item.id} image={item.image} title={item.title} price={item.price} id={item.id} quantity={item.quantity} />
                                    
                             ))
                         )
+                        
                     }
+                  
+                    
                      
                    
 

@@ -1,15 +1,15 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect, forwardRef } from 'react'
 import './CartItem.css'
 import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 
 import { useStateValue } from './StateProvider';
 
 const CartItem = ({id,image,title,price,quantity}) => {
- console.log(`quantity in cart ${quantity}`);
+
    // const [subtotal,setsubtotal]=useState(0)  
   //  const [quantity,setquantity]=useState(1)
  let cart= sessionStorage.getItem('cart');
- console.log(`session storate ${cart}`)
+
    const [{basket},dispatch]=useStateValue();
 
 
@@ -57,7 +57,7 @@ const removeItem=()=>{
 
   
     return (
-       <div>
+       <div >
         {quantity>0&&
                                     
             <div className="checkout__product">
