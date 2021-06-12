@@ -5,9 +5,10 @@ import { useHistory } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "./axios";
+import { db } from "../firebase";
 const Payment = () => {
   const history = useHistory();
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
   const [tax, settax] = useState(0);
   const [grandTotal, setgrandTotal] = useState(0);
   const [processing, setprocessing] = useState("");
@@ -73,15 +74,25 @@ const Payment = () => {
       })
       .then(({ paymentIntent }) => {
         // payment intent is like payment confirmation
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         setsucceeded(true);
         setError(null);
         setprocessing(false);
+        history.push("/orders");
         dispatch({
           type: "REMOVE_ALL_ITEMS",
         });
 
         alert("Order Successfully Placed");
-        //history.replace("/orders");
       });
   };
 

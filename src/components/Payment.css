@@ -143,3 +143,15 @@
 .payment__cardName:focus-visible {
     outline: none;
 }
+
+@media (max-width: 550px){
+
+    .payment__container {
+      
+        display: flex;
+        flex-direction: column;
+    }
+    .payment__header{
+        padding-left: 30px;
+    }
+}
