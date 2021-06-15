@@ -3,6 +3,7 @@ import { Link,useHistory } from 'react-router-dom';
 import { auth } from '../firebase';
 import './Login.css'
 import { useStateValue } from './StateProvider';
+import { signInWithGoogle } from '../firebase';
 
 const Login = () => {
     const history=useHistory();
@@ -39,7 +40,7 @@ const Login = () => {
                  <Link to="/signup" style={{ textDecoration: 'none' }}>
                       <button className="signup__button" >SIGN UP</button>
                       </Link>  
-                    <button className="signup__button__google">SIGNUP WITH GOOGLE</button>
+                    <button className="signup__button__google" onClick={signInWithGoogle}>SIGNUP WITH GOOGLE</button>
                 </div>
             </div>
         </div>

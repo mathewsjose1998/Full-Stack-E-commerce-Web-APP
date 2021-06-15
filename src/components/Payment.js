@@ -6,6 +6,7 @@ import { useStateValue } from "./StateProvider";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import axios from "./axios";
 import { db } from "../firebase";
+import Footer from './Footer'
 const Payment = () => {
   const history = useHistory();
   const [{ basket, user }, dispatch] = useStateValue();
@@ -107,7 +108,7 @@ const Payment = () => {
             <h4>How'd you like to pay?</h4>
             <p>
               Choose a payment method and verify your details to successfully
-              place the order.
+              place the order. (Use test card Number as 4242 for successfull payment)
             </p>
           </div>
 
@@ -196,6 +197,7 @@ const Payment = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

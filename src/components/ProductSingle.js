@@ -9,8 +9,9 @@ const ProductSingle = () => {
     const [isadded,setadded]=useState(false)
 const [{basket},dispatch]=useStateValue();
 
-console.log(` ${JSON.stringify(basket)}`)
-console.log(basket?.length);
+
+
+
 const addToCart=()=>{
     //DISPATCH the item to the datalayer
 
@@ -31,6 +32,7 @@ const addToCart=()=>{
     const [item,setitem]=useState('')
     //console.log(productid)
     useEffect(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'})
             console.log(productId)  
             fetch(`https://fakestoreapi.com/products/${productId}`)
             .then(res=>res.json())
@@ -55,7 +57,7 @@ const addToCart=()=>{
 
                 <div>
 
-<div className="productsingle__container">
+<div className="productsingle__container" key={item.id}>
                <div className="productsingle__image">
                    <img src={item.image} alt="" />
                </div>

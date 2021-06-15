@@ -48,6 +48,19 @@
 
 }
 
+.sidebar__homeIcon,
+.sidebar__cartIcon,
+.sidebar__bookmarkIcon,
+.sidebar__ordersIcon :focus-visible {
+    outline: none;
+}
+
+.sidebar__ordersIcon:focus {
+    outline: none;
+}
+
+
+
 .sidebar__userInfo {
 
     padding-bottom: 60px;
@@ -67,6 +80,16 @@
 
 }
 
+.app__toolTip {
+    margin-bottom: -10px;
+    border-radius: 0.5rem !important;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.app__toolTipRed {
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(220, 20, 60, 0.15) !important;
+}
+
 
 @media (max-width: 550px) {
     .sidebar {
@@ -74,7 +97,14 @@
         padding-left: 30px;
         padding-right: 20px;
         position: fixed;
+
     }
+
+    .sidebar__userInfo {
+        padding-bottom: 120px;
+    }
+
+
 
     /* .sidebar__Logo {
         transform: translateX(80px);

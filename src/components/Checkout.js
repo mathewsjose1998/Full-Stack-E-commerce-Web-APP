@@ -4,9 +4,10 @@ import FlipMove from 'react-flip-move'
 import './Checkout.css'
 import { useStateValue } from './StateProvider'
 import SubTotal from './SubTotal'
+
 const Checkout = () => {
     const [{basket},dispatch]=useStateValue()
-    console.log(basket)
+
     return (
         <div className="checkout">
             <div className="checkout__header">
@@ -41,6 +42,7 @@ const Checkout = () => {
                     <SubTotal/>
                 </div>
             </div>
+  
            
         </div>
     )

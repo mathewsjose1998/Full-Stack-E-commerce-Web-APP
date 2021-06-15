@@ -13,7 +13,7 @@ import Signup from "./components/Signup";
 import { auth } from "./firebase";
 import { useStateValue } from "./components/StateProvider";
 import Profile from "./components/Profile";
-import Footer from "./components/Footer";
+
 import Payment from "./components/Payment";
 
 import { loadStripe } from "@stripe/stripe-js";
@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     //listner for auth changes
     auth.onAuthStateChanged((authUser) => {
-      console.log(`the user is  >>> ${authUser}`);
+ 
       if (authUser) {
         dispatch({
           type: "SET_USER",

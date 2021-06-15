@@ -13,6 +13,7 @@
 
     margin-bottom: 10px;
     box-shadow: 3px 2px 5px rgba(175, 175, 179, 0.5);
+    border: rgb(204, 149, 82) solid 1px;
 
 }
 
@@ -85,7 +86,10 @@
 
 .product__price {}
 
-.product__rating {}
+.product__rating {
+    color: rgb(104, 101, 86);
+
+}
 
 
 @media (max-width: 550px) {
@@ -94,11 +98,17 @@
 
         width: 280px;
 
+
+
     }
 
     .product_imageContainer {
 
         margin-left: 18px;
+    }
+
+    .product__description {
+        padding-left: 10px;
     }
 
 

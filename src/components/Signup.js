@@ -1,6 +1,9 @@
+import { Link } from "@material-ui/core";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { auth } from "../firebase";
+import { signInWithGoogle } from '../firebase';
+
 import "./Login.css";
 
 const Signup = () => {
@@ -27,6 +30,9 @@ const Signup = () => {
       })
       .catch((error) => alert(error));
   };
+  const handleLogin=()=>{
+    history.push('/login')
+  }
   return (
     <div className="login">
       <div className="login__container">
@@ -58,29 +64,12 @@ const Signup = () => {
         </button>
         <p>Already have an account?</p>
         <div className="signup__buttons">
-          <button className="signup__button">LOGIN INSTEAD</button>
-          <button className="signup__button__google">SIGNUP WITH GOOGLE</button>
+       <button className="signup__button" onClick={handleLogin} >LOGIN INSTEAD</button>
+          <button className="signup__button__google" onClick={signInWithGoogle}  >SIGNUP WITH GOOGLE</button>
         </div>
       </div>
     </div>
-    // <div>
-    //      <div className="signup">
-    //     <div className="signup__container">
-    //         <h2>Create your Account</h2>
-    //         <div className="signup__input">
-    //             <input type="email" placeholder="Email Address" value={email} onChange={(e)=> setemail(e.target.value)}/>
-    //             <input type="password" name="" id="" placeholder="Password" value={password} onChange={(e)=> setpassword(e.target.value)}/>
-    //         </div>
-    //         <button className="signup__button">SIGN UP</button>
-    //         <p>Already have an account?</p>
-
-    //         <div className="signup__buttons">
-    //             <button className="signup__button" type="submit" onClick={signUp}>Login Instead</button>
-    //             <button className="signup__button__google">SIGNUP WITH GOOGLE</button>
-    //         </div>
-    //     </div>
-    // </div>
-    // </div>
+   
   );
 };
 

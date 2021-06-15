@@ -32,7 +32,7 @@ const Orders = () => {
   return (
     <div className="orders">
       <h1>
-        {user.displayName}, Your Orders
+        {user?.displayName}, Your Orders
         {console.log(orders)}
       </h1>
       {orders.map((order) => (

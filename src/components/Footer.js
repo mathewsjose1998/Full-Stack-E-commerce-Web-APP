@@ -1,8 +1,6 @@
 import React from "react";
 import "./Footer.css";
 
-
-
 const languages = [
   "English",
   "Spanish",
@@ -76,12 +74,14 @@ function Footer() {
           ))}
         </div>
         <div className="footer__bottom">
-          <img src="https://raw.githubusercontent.com/santdas36/amazon-ish/e984964373a1031ccf97b840d4b8007e3d54dfed/src/assets/logo.svg" className="footer__logo" />
+          <img
+            src="https://raw.githubusercontent.com/santdas36/amazon-ish/e984964373a1031ccf97b840d4b8007e3d54dfed/src/assets/logo.svg"
+            className="footer__logo"
+          />
           <span className="footer__copy">
             &copy; 2021 | Developed by{" "}
-            <a href="https://github.com/mathewsjose1998">Mathews Jose</a>
+            <a href="https://mathewsjo.netlify.app/#home">Mathews Jose</a>
           </span>
-         
         </div>
       </div>
     </div>
